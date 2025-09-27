@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>📝 Notes</h1>
+      <div>
+        <select id="themeSelect" class="btn secondary">
+          <option value="">🌙 Dark</option>
+          <option value="light-mode">☀️ Light</option>
+          <option value="purple-mode">💜 Purple</option>
+          <option value="orange-mode">🟧 Orange</option>
+          <option value="teal-mode">🟩 Teal</option>
+        </select>
+      </div>
+    </div>
+
+    <form id="noteForm">
+      <textarea id="noteInput" rows="3" placeholder="Write a note..."></textarea>
+      <input type="text" id="tagInput" placeholder="Tag (optional: Work, Personal)">
+      <button type="submit" class="btn primary">Add Note</button>
+    </form>
+
+    <ul id="noteList"></ul>
+
+    <div class="footer">
+      <button id="backBtn" class="btn secondary">⬅ Back</button>
+      <button id="clearNotesBtn" class="btn danger">Clear All Notes</button>
+      <button id="logoutBtn" class="btn danger">Logout</button>
+    </div>
+  </div>
+
+  <script src="notes.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>

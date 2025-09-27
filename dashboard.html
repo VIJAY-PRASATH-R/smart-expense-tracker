@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>Welcome, <span id="welcomeUser"></span> 👋</h1>
+      <div>
+        <select id="themeSelect" class="btn secondary">
+          <option value="">🌙 Dark</option>
+          <option value="light-mode">☀️ Light</option>
+          <option value="purple-mode">💜 Purple</option>
+          <option value="orange-mode">🟧 Orange</option>
+          <option value="teal-mode">🟩 Teal</option>
+        </select>
+      </div>
+    </div>
+
+    <p style="text-align:center;">Choose what you want to do today</p>
+    <div class="menu">
+      <a href="expense.html" class="card">
+        <h3>💰 Expense Tracker</h3>
+        <p>Add, view, and analyze your expenses</p>
+      </a>
+      <a href="notes.html" class="card">
+        <h3>📝 Notes</h3>
+        <p>Write and manage your notes</p>
+      </a>
+    </div>
+
+    <div class="footer">
+      <button id="logoutBtn" class="btn danger">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    const SESSION_KEY = "sessionUser";
+    const user = localStorage.getItem(SESSION_KEY);
+    if (!user) window.location.href = "login.html";
+    document.getElementById("welcomeUser").textContent = user;
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem(SESSION_KEY);
+      window.location.href = "login.html";
+    });
+  </script>
+  <script src="theme.js"></script>
+</body>
+</html>

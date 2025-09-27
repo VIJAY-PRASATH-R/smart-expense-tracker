@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>💰 Expense Tracker</h1>
+      <div>
+        <select id="themeSelect" class="btn secondary">
+          <option value="">🌙 Dark</option>
+          <option value="light-mode">☀️ Light</option>
+          <option value="purple-mode">💜 Purple</option>
+          <option value="orange-mode">🟧 Orange</option>
+          <option value="teal-mode">🟩 Teal</option>
+        </select>
+      </div>
+    </div>
+
+    <form id="expenseForm">
+      <input type="number" id="amount" placeholder="Amount" required>
+      <input type="text" id="category" placeholder="Category" required>
+      <input type="date" id="date" required>
+      <input type="text" id="note" placeholder="Note">
+      <button type="submit" class="btn primary">Add Expense</button>
+    </form>
+
+    <h2>Expenses</h2>
+    <div>
+      <label>Filter by:</label>
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="thisMonth">This Month</option>
+        <option value="lastMonth">Last Month</option>
+      </select>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Amount</th><th>Category</th><th>Date</th><th>Note</th><th>Action</th></tr>
+      </thead>
+      <tbody id="expenseList"></tbody>
+    </table>
+
+    <h2>Monthly Summary</h2>
+    <canvas id="monthChart"></canvas>
+
+    <div class="footer">
+      <button id="backBtn" class="btn secondary">⬅ Back</button>
+      <button id="logoutBtn" class="btn danger">Logout</button>
+    </div>
+  </div>
+
+  <script src="expense.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>👑 Admin Dashboard</h1>
+      <div>
+        <select id="themeSelect" class="btn secondary">
+          <option value="">🌙 Dark</option>
+          <option value="light-mode">☀️ Light</option>
+          <option value="purple-mode">💜 Purple</option>
+          <option value="orange-mode">🟧 Orange</option>
+          <option value="teal-mode">🟩 Teal</option>
+        </select>
+      </div>
+    </div>
+
+    <h2>All Users</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Total Expenses</th>
+          <th>Notes Count</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="adminBody"></tbody>
+    </table>
+
+    <div class="footer">
+      <button id="exportBtn" class="btn primary">⬇ Export All Data</button>
+      <button id="logoutBtn" class="btn danger">Logout</button>
+    </div>
+  </div>
+
+  <!-- User detail modal -->
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <h2 id="modalTitle">User Details</h2>
+      <h3>Expenses</h3>
+      <table>
+        <thead><tr><th>Amount</th><th>Category</th><th>Date</th><th>Note</th></tr></thead>
+        <tbody id="modalExpenses"></tbody>
+      </table>
+      <h3>Notes</h3>
+      <ul id="modalNotes"></ul>
+
+      <button id="exportUserBtn" class="btn primary">⬇ Export This User</button>
+      <button id="closeModal" class="btn secondary">Close</button>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>
